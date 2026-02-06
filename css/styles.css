@@ -268,6 +268,18 @@ legend {
     width: 70px;
     height: 55px;
   }
+  
+  /* Pantallas grandes */
+  @media (min-width: 1200px) {
+    body {
+      max-width: 1100px;
+      margin: auto;
+    }
+  }
+
+  /* =========================
+   BOTÓN VOLVER FIJO
+  ========================= */
 
   .btn-volver {
     position: fixed;
