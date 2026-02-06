@@ -4,30 +4,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sabores de colombia - Cocina</title>
     <link rel="stylesheet" href="../../css/styles.css">
 </head>
 
 <body>
-    
-    <a href="../../index.html" class="btn-volver">← Volver al menú principal</a>
     <nav>
-    <a href="../../views/cliente/index.html">Cliente</a>
-    <a href="../../views/administrador/index.html">Administrador</a>
-    <a href="../../views/mesero/index.html">Mesero</a>
+        <a href="../../index.html" class="btn-volver">← Volver al menú principal</a>
+        <a href="../../views/cliente/index.html" class="navItem">Cliente</a>
+        <a href="../../views/cocina/index.html" class="navItem">Cocina</a>
+        <a href="../../views/mesero/index.html" class="navItem">Mesero</a>
+        <a href="../../views/administrador/index.html" class="navItem">Administrador</a>
     </nav>
 
-    <div>
-        <h1>Tabla de pedidos</h1>
+    <h1 class="bienvenida">Órdenes de la Cocina</h1>
+    <div class="seccion-menu">
+        <h2>Estado de pedidos</h2>
         <table>
-            <tr>
-                <th># de pedido</th>
-                <th></th>
-                <th>Estado</th>
-            </tr>
-            <tr>
-                
-            </tr>
+            <thead>
+                <tr>
+                    <th># Pedido</th>
+                    <th>Plato</th>
+                    <th>Cantidad</th>
+                    <th>Estado</th>
+                    <th>Hora</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>001</td>
+                    <td>Toston con hogao</td>
+                    <td>2</td>
+                    <td><span class="estado-preparando">Preparando</span></td>
+                    <td>14:25</td>
+                </tr>
+                <tr>
+                    <td>002</td>
+                    <td>Arepa de chocolo</td>
+                    <td>1</td>
+                    <td><span class="estado-listo">Listo</span></td>
+                    <td>14:18</td>
+                </tr>
+                <tr>
+                    <td>003</td>
+                    <td>Bandeja paisa</td>
+                    <td>3</td>
+                    <td><span class="estado-preparando">Preparando</span></td>
+                    <td>14:23</td>
+                </tr>
+                <tr>
+                    <td>004</td>
+                    <td>Frijolada</td>
+                    <td>2</td>
+                    <td><span class="estado-listo">Listo</span></td>
+                    <td>14:15</td>
+                </tr>
+                <tr>
+                    <td>005</td>
+                    <td>Queso con bocadillo</td>
+                    <td>4</td>
+                    <td><span class="estado-pendiente">Pendiente</span></td>
+                    <td>14:28</td>
+                </tr>
+                <tr>
+                    <td>006</td>
+                    <td>Toston con hogao</td>
+                    <td>1</td>
+                    <td><span class="estado-preparando">Preparando</span></td>
+                    <td>14:26</td>
+                </tr>
+            </tbody>
         </table>
     </div>
 </body>

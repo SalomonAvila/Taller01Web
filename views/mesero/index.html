@@ -4,60 +4,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sabores de colombia - Mesero</title>
     <link rel="stylesheet" href="../../css/styles.css">
 </head>
 
 <body>
-    <div>
+    <nav>
         <a href="../../index.html" class="btn-volver">← Volver al menú principal</a>
-        <nav>
-        <a href="../../views/cliente/index.html">Cliente</a>
-        <a href="../../views/administrador/index.html">Administrativo</a>
-        <a href="../../views/cocina/index.html">Cocina</a>
-        </nav>
-
-        <h1>Realizar pedido</h1>
+        <a href="../../views/cliente/index.html" class="navItem">Cliente</a>
+        <a href="../../views/cocina/index.html" class="navItem">Cocina</a>
+        <a href="../../views/mesero/index.html" class="navItem">Mesero</a>
+        <a href="../../views/administrador/index.html" class="navItem">Administrador</a>
+    </nav>
+    
+    <h1 class="bienvenida">Gestión de Pedidos</h1>
+    
+    <div class="seccion-formulario">
+        <h2>Realizar Pedido</h2>
         <form action="">
-            <input type="checkbox" id="plato1" name="plato1" value="plato1">
-            <label for="plato1">Plato 1</label>
-            <label for="points">Cantidad:</label>
-            <input type="number" id="cantidad" name="cantidad" min="1" max="10" step="1" value="1"></br>
-            <input type="checkbox" id="plato2" name="plato2" value="plato2">
-            <label for="plato2">Plato 2</label>
-            <label for="points">Cantidad:</label>
-            <input type="number" id="cantidad" name="cantidad" min="1" max="10" step="1" value="1"></br>
-            <input type="checkbox" id="plato3" name="plato3" value="plato3">
-            <label for="plato3">Plato 3</label>
-            <label for="points">Cantidad:</label>
-            <input type="number" id="cantidad" name="cantidad" min="1" max="10" step="1" value="1"></br>
-            <input type="checkbox" id="plato4" name="plato4" value="plato4">
-            <label for="plato4">Plato 4</label>
-            <label for="points">Cantidad:</label>
-            <input type="number" id="cantidad" name="cantidad" min="1" max="10" step="1" value="1"></br>
-            <input type="checkbox" id="plato5" name="plato5" value="plato5">
-            <label for="plato5">Plato 5</label>
-            <label for="points">Cantidad:</label>
-            <input type="number" id="cantidad" name="cantidad" min="1" max="10" step="1" value="1"></br>
+            <fieldset>
+                <legend>Selecciona platos y cantidades</legend>
+                
+                <div class="form-group">
+                    <input type="checkbox" id="plato1" name="plato1" value="toston">
+                    <label for="plato1">Toston con hogao</label>
+                    <label for="cant1">Cantidad:</label>
+                    <input type="number" id="cant1" name="cant1" min="1" max="10" value="1">
+                </div>
+
+                <div class="form-group">
+                    <input type="checkbox" id="plato2" name="plato2" value="arepa">
+                    <label for="plato2">Arepa de chocolo</label>
+                    <label for="cant2">Cantidad:</label>
+                    <input type="number" id="cant2" name="cant2" min="1" max="10" value="1">
+                </div>
+
+                <div class="form-group">
+                    <input type="checkbox" id="plato3" name="plato3" value="bandeja">
+                    <label for="plato3">Bandeja paisa</label>
+                    <label for="cant3">Cantidad:</label>
+                    <input type="number" id="cant3" name="cant3" min="1" max="10" value="1">
+                </div>
+
+                <div class="form-group">
+                    <input type="checkbox" id="plato4" name="plato4" value="frijolada">
+                    <label for="plato4">Frijolada</label>
+                    <label for="cant4">Cantidad:</label>
+                    <input type="number" id="cant4" name="cant4" min="1" max="10" value="1">
+                </div>
+
+                <div class="form-group">
+                    <input type="checkbox" id="plato5" name="plato5" value="bocadillo">
+                    <label for="plato5">Queso con bocadillo</label>
+                    <label for="cant5">Cantidad:</label>
+                    <input type="number" id="cant5" name="cant5" min="1" max="10" value="1">
+                </div>
+            </fieldset>
+            
+            <div class="total-pedido">
+                <h3>Total: <strong>$500,000 COP</strong></h3>
+            </div>
+            
+            <button type="submit" class="btn-enviar">Enviar Pedido</button>
         </form>
-        <p>Precio: <strong>500,000 pesos</strong></p>
-
-
     </div>
-    <div>
-        <h1>Reservar mesa</h1>
+
+    <div class="seccion-formulario">
+        <h2>Reservar Mesa</h2>
         <form action="">
-            Nume<p>Numero de personas: </p>
-            <input type="number" id="numPersonas" min="1" max="10" step="1" value="1" />
-            <p>Edad de cada persona:</p>
-            <input type="text" id="edadPersonas" />
-            <p>Tipo de evento: </p>
-            <select name="evento">
-                <option value="cumpleaños">Cumpleaños</option>
-                <option value="trabajo">Evento laboral</option>
-                <option value="familia">Evento familiar</option>
-            </select>
-            <input type="submit" value="Reservar" />
+            <fieldset>
+                <legend>Datos de la reserva</legend>
+                
+                <div class="form-group">
+                    <label for="numPersonas">Número de personas:</label>
+                    <input type="number" id="numPersonas" name="numPersonas" min="1" max="20" value="1" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="edadPersonas">Edades de los comensales:</label>
+                    <input type="text" id="edadPersonas" name="edadPersonas" placeholder="Ej: 25, 30, 15">
+                </div>
+
+                <div class="form-group">
+                    <label for="evento">Tipo de evento:</label>
+                    <select id="evento" name="evento">
+                        <option value="">-- Selecciona una opción --</option>
+                        <option value="cumpleaños">Cumpleaños</option>
+                        <option value="trabajo">Evento laboral</option>
+                        <option value="familia">Evento familiar</option>
+                    </select>
+                </div>
+            </fieldset>
+            
+            <button type="submit" class="btn-enviar">Confirmar Reserva</button>
         </form>
     </div>
 </body>

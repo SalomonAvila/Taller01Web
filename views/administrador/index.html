@@ -1,60 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sabores de colombia - Administrador</title>
     <link rel="stylesheet" href="../../css/styles.css">
 </head>
-
 <body>
-    <a href="../../index.html" class="btn-volver">← Volver al menú principal</a>
     <nav>
-        <a href="../../views/cliente/index.html">Cliente</a>
-        <a href="../../views/cocina/index.html">Cocina</a>
-        <a href="../../views/mesero/index.html">Mesero</a>
+        <a href="../../index.html" class="btn-volver">← Volver al menú principal</a>
+        <a href="../../views/cliente/index.html" class="navItem">Cliente</a>
+        <a href="../../views/cocina/index.html" class="navItem">Cocina</a>
+        <a href="../../views/mesero/index.html" class="navItem">Mesero</a>
+        <a href="../../views/administrador/index.html" class="navItem">Administrador</a>
     </nav>
-
-    <h1>Hola Admin!</h1>
-    <p>Resumen del dia</p>
-    <table>
-            <tr>
-                <th>Imagen</th>
-                <th>Nombre del plato</th>
-                <th>Ventas en COP</th>
-            </tr>
-            <tr>
-                <td><img src="../../images/tostones.jpeg" alt="Toston con hogao" class="menu-img"></td>
-                <td>Toston con hogao</td>
-                <td>150000</td>
-            </tr>
-            <tr>
-                <td><img src="../../images/arepa.jpeg" alt="Arepa de chocolo" class="menu-img"></td>
-                <td>Arepa de chocolo</td>
-                <td>90000</td>
-            </tr>
-            <tr>
-                <td><img src="../../images/bandeja.jpeg" alt="Bandeja paisa" class="menu-img"></td>
-                <td>Bandeja paisa</td>
-                <td>800000</td>
-            </tr>
-            <tr>
-                <td><img src="../../images/frijolada.jpeg" alt="Frijolada" class="menu-img"></td>
-                <td>Frijolada</td>
-                <td>350000</td>
-            </tr>
-            <tr>
-                <td><img src="../../images/bocadillo.jpeg" alt="Queso con bocadillo" class="menu-img"></td>
-                <td>Queso con bocadillo</td>
-                <td>68000</td>
-            </tr>
-            <tr>
-                <td colspan="2">Total</td>
-                <td>1308000</td>
-            </tr>
+    <h1 class="bienvenida">Panel de Administración</h1>
+    <div class="seccion-menu">
+        <h2>Resumen del día</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Imagen</th>
+                    <th>Nombre del plato</th>
+                    <th>Ventas en COP</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><img src="../../images/tostones.jpeg" alt="Toston con hogao" class="menu-img"></td>
+                    <td>Toston con hogao</td>
+                    <td>$150,000</td>
+                </tr>
+                <tr>
+                    <td><img src="../../images/arepa.jpeg" alt="Arepa de chocolo" class="menu-img"></td>
+                    <td>Arepa de chocolo</td>
+                    <td>$90,000</td>
+                </tr>
+                <tr>
+                    <td><img src="../../images/bandeja.jpeg" alt="Bandeja paisa" class="menu-img"></td>
+                    <td>Bandeja paisa</td>
+                    <td>$800,000</td>
+                </tr>
+                <tr>
+                    <td><img src="../../images/frijolada.jpeg" alt="Frijolada" class="menu-img"></td>
+                    <td>Frijolada</td>
+                    <td>$350,000</td>
+                </tr>
+                <tr>
+                    <td><img src="../../images/bocadillo.jpeg" alt="Queso con bocadillo" class="menu-img"></td>
+                    <td>Queso con bocadillo</td>
+                    <td>$68,000</td>
+                </tr>
+                <tr>
+                    <td colspan="2">Total</td>
+                    <td>$1,458,000</td>
+                </tr>
+            </tbody>
         </table>
-
+    </div>
 </body>
-
 </html>

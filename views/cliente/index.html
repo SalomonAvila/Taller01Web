@@ -4,68 +4,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sabores de colombia - Cliente</title>
     <link rel="stylesheet" href="../../css/styles.css">
 
 </head>
 
 <body>
-    <div>
+    <nav>
         <a href="../../index.html" class="btn-volver">← Volver al menú principal</a>
-        <nav>
-        <a href="../../views/administrador/index.html">Administrador</a>
-        <a href="../../views/cocina/index.html">Cocina</a>
-        <a href="../../views/mesero/index.html">Mesero</a>
-        </nav>
-
-        <h1>Menu</h1>
+        <a href="../../views/cliente/index.html" class="navItem">Cliente</a>
+        <a href="../../views/cocina/index.html" class="navItem">Cocina</a>
+        <a href="../../views/mesero/index.html" class="navItem">Mesero</a>
+        <a href="../../views/administrador/index.html" class="navItem">Administrador</a>
+    </nav>
+    
+    <h1 class="bienvenida">Menú Digital</h1>
+    
+    <div class="seccion-menu">
+        <h2>Platos Disponibles</h2>
         <table>
-            <tr>
-                <th>Imagen</th>
-                <th>Nombre del plato</th>
-                <th>Categoría</th>
-                <th>Descripcion</th>
-                <th>Precio</th>
-            </tr>
-            <tr>
-                <td><img src="../../images/tostones.jpeg" alt="Toston con hogao" class="menu-img"></td>
-                <td>Toston con hogao</td>
-                <td>Entrada</td>
-                <td>Tostadas de platano maduro cubiertas con tomate y cebolla, acompañadas con guacamole.</td>
-                <td>15000 COP</td>
-            </tr>
-            <tr>
-                <td><img src="../../images/arepa.jpeg" alt="Arepa de chocolo" class="menu-img"></td>
-                <td>Arepa de chocolo</td>
-                <td>Entrada</td>
-                <td>Arepas de chocolo cubiertas con queso siete cueros.</td>
-                <td>10000 COP</td>
-            </tr>
-            <tr>
-                <td><img src="../../images/bandeja.jpeg" alt="Bandeja paisa" class="menu-img"></td>
-                <td>Bandeja paisa</td>
-                <td>Plato fuerte</td>
-                <td>Bandeja con frijoles, arroz, morcilla, huevo frito, carne molida, platano, arepa y aguacate./td>
-                <td>40000 COP</td>
-            </tr>
-            <tr>
-                <td><img src="../../images/frijolada.jpeg" alt="Frijolada" class="menu-img"></td>
-                <td>Frijolada</td>
-                <td>Plato fuerte</td>
-                <td>Plato de frijoles acompañado de chicharron, arroz blanco y arepa.</td>
-                <td>25000 COP</td>
-            </tr>
-            <tr>
-                <td><img src="../../images/bocadillo.jpeg" alt="Queso con bocadillo" class="menu-img"></td>
-                <td>Queso con bocadillo</td>
-                <td>Postre</td>
-                <td>Copa de bocadillo derretido con queso siete cueros.</td>
-                <td>4000 COP</td>
-            </tr>
+            <thead>
+                <tr>
+                    <th>Imagen</th>
+                    <th>Nombre del plato</th>
+                    <th>Categoría</th>
+                    <th>Descripcion</th>
+                    <th>Precio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><img src="../../images/tostones.jpeg" alt="Toston con hogao" class="menu-img"></td>
+                    <td>Toston con hogao</td>
+                    <td>Entrada</td>
+                    <td>Tostadas de platano maduro cubiertas con tomate y cebolla, acompañadas con guacamole.</td>
+                    <td>$15,000</td>
+                </tr>
+                <tr>
+                    <td><img src="../../images/arepa.jpeg" alt="Arepa de chocolo" class="menu-img"></td>
+                    <td>Arepa de chocolo</td>
+                    <td>Entrada</td>
+                    <td>Arepas de chocolo cubiertas con queso siete cueros.</td>
+                    <td>$10,000</td>
+                </tr>
+                <tr>
+                    <td><img src="../../images/bandeja.jpeg" alt="Bandeja paisa" class="menu-img"></td>
+                    <td>Bandeja paisa</td>
+                    <td>Plato fuerte</td>
+                    <td>Bandeja con frijoles, arroz, morcilla, huevo frito, carne molida, platano, arepa y aguacate.</td>
+                    <td>$40,000</td>
+                </tr>
+                <tr>
+                    <td><img src="../../images/frijolada.jpeg" alt="Frijolada" class="menu-img"></td>
+                    <td>Frijolada</td>
+                    <td>Plato fuerte</td>
+                    <td>Plato de frijoles acompañado de chicharron, arroz blanco y arepa.</td>
+                    <td>$25,000</td>
+                </tr>
+                <tr>
+                    <td><img src="../../images/bocadillo.jpeg" alt="Queso con bocadillo" class="menu-img"></td>
+                    <td>Queso con bocadillo</td>
+                    <td>Postre</td>
+                    <td>Copa de bocadillo derretido con queso siete cueros.</td>
+                    <td>$4,000</td>
+                </tr>
+                <tr>
+                    <td colspan="5">Cuando esté listo contacte con un mesero</td>
+                </tr>
+            </tbody>
         </table>
     </div>
 </body>
-</html>
-
 
 </html>
