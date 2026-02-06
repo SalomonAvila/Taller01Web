@@ -210,5 +210,20 @@ input[type="submit"]:hover {
     border-radius: 12px;
   }
 
+/* =========================
+   IMAGEN PRINCIPAL
+========================= */
 
+  .contenedor-img {
+    text-align: center;
+    background-color: transparent;
+  }
+
+  .img-principal {
+    display: inline-block;
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+  }
 }
