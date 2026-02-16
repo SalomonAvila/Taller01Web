@@ -21,25 +21,29 @@ function formatearPrecio(valor) {
 }
 
 function renderPlatos(lista) {
-  const tbody = document.getElementById("tbodyPlatos");
-  tbody.innerHTML = "";
+  const contenedor = document.getElementById("contenedorPlatos");
+  contenedor.innerHTML = "";
 
   if (lista.length === 0) {
-    tbody.innerHTML = "<tr class=\"fila-aviso\"><td colspan=\"5\">No hay platos que coincidan.</td></tr>";
+    contenedor.innerHTML = "<div class=\"fila-aviso\">No hay platos que coincidan.</div>";
     return;
   }
 
-  const filas = lista.map((plato) => `
-    <tr>
-      <td><img src="../../images/${plato.imagen}" alt="${plato.nombre}" class="menu-img"></td>
-      <td>${plato.nombre}</td>
-      <td>${plato.categoria}</td>
-      <td>${plato.descripcion}</td>
-      <td>${formatearPrecio(plato.precio)}</td>
-    </tr>
+  const tarjetas = lista.map((plato) => `
+    <article class="menu-item">
+      <img src="../../images/${plato.imagen}" alt="${plato.nombre}" class="menu-img">
+      <div class="menu-info">
+        <div class="menu-encabezado">
+          <h3 class="menu-nombre">${plato.nombre}</h3>
+          <span class="menu-precio">${formatearPrecio(plato.precio)}</span>
+        </div>
+        <p class="menu-categoria">${plato.categoria}</p>
+        <p class="menu-descripcion">${plato.descripcion}</p>
+      </div>
+    </article>
   `);
 
-  tbody.innerHTML = filas.join("");
+  contenedor.innerHTML = tarjetas.join("");
 }
 
 function filtrarPlatos(nombre, categoria) {

@@ -131,11 +131,13 @@ tbody tr:nth-child(even) {
   background-color: #f9f3f0;
 }
 
-/* Fila de aviso en la tabla */
-tbody tr.fila-aviso {
+/* Fila de aviso */
+.fila-aviso {
   background-color: #f2b705;
   font-weight: bold;
   color: #4a1414;
+  padding: 14px 18px;
+  border-radius: 8px;
 }
 
 /* Secciones principales */
@@ -181,6 +183,69 @@ legend {
   font-size: 1.1rem;
 }
 
+/* Carta del menu */
+#contenedorPlatos {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.menu-carta {
+  background: linear-gradient(135deg, #f8efe8, #f3e3d2);
+  padding: 18px;
+  border-radius: 10px;
+}
+
+.menu-item {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 16px;
+  background: #fff7f0;
+  border: 1px solid rgba(74, 20, 20, 0.15);
+  border-radius: 14px;
+  padding: 14px;
+  box-shadow: 0 6px 14px rgba(74, 20, 20, 0.08);
+  text-align: left;
+}
+
+.menu-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.menu-encabezado {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  border-bottom: 1px dashed rgba(74, 20, 20, 0.25);
+  padding-bottom: 6px;
+}
+
+.menu-nombre {
+  font-size: 1.1rem;
+  color: #4a1414;
+  margin: 0;
+}
+
+.menu-precio {
+  font-weight: bold;
+  color: #8b0000;
+  white-space: nowrap;
+}
+
+.menu-categoria {
+  font-size: 0.95rem;
+  font-weight: bold;
+  color: #2d5934;
+  margin: 0;
+}
+
+.menu-descripcion {
+  margin: 0;
+  color: #4a1414;
+}
 /* Grupo de campos */
 .form-group {
   display: flex;
@@ -270,11 +335,12 @@ legend {
 
 /* Imágenes del menú */
 .menu-img {
-  width: 90px;
-  height: 70px;
+  width: 110px;
+  height: 90px;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 12px;
   display: block;
+  border: 2px solid rgba(74, 20, 20, 0.2);
 }
 
 /* Imagen principal */
@@ -300,8 +366,12 @@ legend {
   }
 
   .menu-img {
-    width: 70px;
-    height: 55px;
+    width: 90px;
+    height: 70px;
+  }
+
+  .menu-item {
+    grid-template-columns: 90px 1fr;
   }
 
   /* Pantallas grandes */
@@ -337,12 +407,6 @@ legend {
     background-color: burlywood;
     height: 40%;
   }
-}
-
-#contenedorPlatos {
-    display: flex;
-    flex-direction: column;
-    gap: 10px; /* espacio entre platos */
 }
 
 #contenedorEdades {
