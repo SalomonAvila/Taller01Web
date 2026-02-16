@@ -206,11 +206,8 @@ function Mesa(numPersonas, edades, tipoEvento, fechaReserva){
             return false;
         }
     }
-    
-    const fechaValor = document.getElementById("fechaReserva").value;
-    const fechaReserva = new Date(fechaValor);
-    let fechaActual = new Date();
 
+    let fechaActual = new Date();
     //Validar Fecha
     if(fechaReserva < fechaActual){
         console.log("La fecha seleccionada para la reserva no es valida, debe ser una fecha mayor o igual al día de hoy "+ fechaActual);
