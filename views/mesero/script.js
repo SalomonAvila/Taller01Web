@@ -171,8 +171,6 @@ formularioPedido.addEventListener("submit", function(formPedido){
 });
 
 // Característica: Reservar mesa
-
-const numPersonas = document.getElementById("numPersonas");
 const contenedorEdades = document.getElementById("contenedorEdades");
 
 //Genera inputs dinamicamente cuqndo cambia el numero
