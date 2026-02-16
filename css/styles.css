@@ -345,9 +345,19 @@ legend {
 }
 
 #contenedorEdades {
-  text-align: left;
-  align-items: flex-start;
+  flex: 1;
+  /*display: flex;
+  flex-direction: column;
+  gap: 8px;*/
 }
+
+#contenedorEdades input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
 
 
 
