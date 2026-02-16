@@ -359,6 +359,12 @@ legend {
   border-radius: 6px;
 }
 
+.contenedorEdades label {
+  font-weight: bold;
+  color: #333;
+  min-width: 200px;
+}
+
 
 
 
