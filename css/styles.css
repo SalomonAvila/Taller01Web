@@ -343,3 +343,14 @@ legend {
     flex-direction: column;
     gap: 10px; /* espacio entre platos */
 }
+
+#formularioReserva {
+  text-align: left;
+  align-items: flex-start;
+}
+
+#formularioReserva .btn-enviar {
+  align-self: flex-start;
+}
+
+
