@@ -184,7 +184,7 @@ legend {
 /* Grupo de campos */
 .form-group {
   display: flex;
-  align-items: left;
+  align-items: center;
   gap: 15px;
   margin-bottom: 12px;
 }
@@ -347,9 +347,8 @@ legend {
 
 #contenedorEdades {
   display: flex;
-  gap: 10px;
-  flex-wrap: wrap; 
   align-items: center;
+  gap: 15px;
 }
 
 #contenedorEdades input {
@@ -358,6 +357,7 @@ legend {
   border: 1px solid #ccc;
   border-radius: 6px;
 }
+
 
 
 
