@@ -194,10 +194,8 @@ numPersonas.addEventListener("input", function(){
     }
 });
 
-// Generar 1 caja apenas carga la página
-window.addEventListener("DOMContentLoaded", function() {
-    numPersonas.dispatchEvent(new Event("input"));
-});
+//Generar al menos un input en edades
+numPersonas.dispatchEvent(new Event("input"));
 
 function Mesa(numPersonas, edades, tipoEvento, fechaReserva){
     if(numPersonas <= 0){
@@ -255,4 +253,6 @@ formularioReserva.addEventListener("submit", function(e){
         alert("Error en la reserva");
     }
 });
+
+
 
