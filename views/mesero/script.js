@@ -209,6 +209,11 @@ function Mesa(numPersonas, edades, tipoEvento, fechaReserva){
         }
     }
 
+    if(tipoEvento == null || tipoEvento == ""){
+        console.log("Debe seleccionar un evento valido");
+        return false;
+    }
+
     let fechaActual = new Date();
     //Validar Fecha
     if(fechaReserva < fechaActual){
@@ -236,7 +241,6 @@ formularioReserva.addEventListener("submit", function(formReserva){
     });
 
     const tipoEvento = document.getElementById("evento").value;
-
     const fechaValor = document.getElementById("fechaReserva").value;
     const fechaReserva = new Date(fechaValor);
 
