@@ -172,30 +172,53 @@ formularioPedido.addEventListener("submit", function(formPedido){
 
 // Característica: Reservar mesa
 
+const numPersonas = document.getElementById("numPersonas");
+const contenedorEdades = document.getElementById("contenedorEdades");
+
+//Genera inputs dinamicamente cuqndo cambia el numero
+numPersonas.addEventListener("input", function(){
+
+    contenedorEdades.innerHTML = ""; //Limpia los anteriores
+
+    let cantidad = parseInt(numPersonas.value);
+
+    if(cantidad > 0){
+        for(let i = 1; i <= cantidad; i++){
+            let input = document.createElement("input");
+	    input.placeholder = "Edad persona" + i;
+            input.type = "number";
+            input.min = "1";
+            input.max = "100";
+            input.classList.add("edadInput");
+
+            contenedorEdades.appendChild(input);
+        }
+    }
+});
+
 function Mesa(numPersonas, edades, tipoEvento, fechaReserva){
     let fechaActual = new Date();
+
     if(numPersonas <= 0){
         console.log("No se puede crear la reserva ya que el numero de personas no esta permitido (mín 1)");
         return;
     }
     
-    let edadesRango = true;
-    let i = 0;
-
-    while (edadesRango == true && i < edades.length) {
-        if (1 <= edades[i] <= 100) {   
-            edadesRango = false;
+    for(let i = 0; i < edades.length; i++){
+        if (edades[i] < 1 || edades[i] > 100) {
+            console.log("Hay edades no válidas en la reserva");   
+            return false;
         }
-        i++;
     }
     
-    if (!edadesRango) {
-        console.log("Hay edades no válidas en la reserva");
-        return;
+    //Validar Fecha
+    let fechaSeleccionada = new Date(fechaReserva);
+
+    if(fechaSeleccionada < fechaActual){
+        console.log("La fecha seleccionada para la reserva no es valida, debe ser una fecha mayor o igual al día de hoy "+ fechaActual);
+        return false;
     }
 
-    if(fechaReserva < fechaActual){
-        console.log("La fecha seleccionada para la reserva no es valida, debe ser una fecha mayor o igual al día de hoy "+ fechaActual);
-        return;
-    }
+    console.log("Reserva realizada con exito");
+    return true;
 }
