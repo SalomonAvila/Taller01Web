@@ -214,6 +214,7 @@ legend {
 /* Inputs y selects */
 .form-group input[type="text"],
 .form-group input[type="number"],
+.form-group input[type="datetime-local"],
 .form-group select {
   padding: 10px 12px;
   border: 1px solid #ccc;
@@ -346,9 +347,9 @@ legend {
 
 #contenedorEdades {
   flex: 1;
-  /*display: flex;
+  display: flex;
   flex-direction: column;
-  gap: 8px;*/
+  gap: 8px;
 }
 
 #contenedorEdades input {
