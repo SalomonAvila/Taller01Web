@@ -349,6 +349,7 @@ legend {
   display: flex;
   gap: 10px;
   flex-wrap: wrap; 
+  align-items: center;
 }
 
 #contenedorEdades input {
