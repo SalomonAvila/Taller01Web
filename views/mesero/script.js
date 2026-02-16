@@ -183,7 +183,7 @@ numPersonas.addEventListener("input", function(){
     if(cantidad > 0){
         for(let i = 1; i <= cantidad; i++){
             let input = document.createElement("input");
-	    input.placeholder = "Edad persona" + i;
+	        input.placeholder = "Edad persona" + i;
             input.type = "number";
             input.min = "1";
             input.max = "100";
@@ -194,9 +194,12 @@ numPersonas.addEventListener("input", function(){
     }
 });
 
-function Mesa(numPersonas, edades, tipoEvento, fechaReserva){
-    let fechaActual = new Date();
+// Generar 1 caja apenas carga la página
+window.addEventListener("DOMContentLoaded", function() {
+    numPersonas.dispatchEvent(new Event("input"));
+});
 
+function Mesa(numPersonas, edades, tipoEvento, fechaReserva){
     if(numPersonas <= 0){
         console.log("No se puede crear la reserva ya que el numero de personas no esta permitido (mín 1)");
         return;
@@ -209,10 +212,12 @@ function Mesa(numPersonas, edades, tipoEvento, fechaReserva){
         }
     }
     
-    //Validar Fecha
-    let fechaSeleccionada = new Date(fechaReserva);
+    const fechaValor = document.getElementById("fechaReserva").value;
+    const fechaReserva = new Date(fechaValor);
+    let fechaActual = new Date();
 
-    if(fechaSeleccionada < fechaActual){
+    //Validar Fecha
+    if(fechaReserva < fechaActual){
         console.log("La fecha seleccionada para la reserva no es valida, debe ser una fecha mayor o igual al día de hoy "+ fechaActual);
         return false;
     }
@@ -220,3 +225,34 @@ function Mesa(numPersonas, edades, tipoEvento, fechaReserva){
     console.log("Reserva realizada con exito");
     return true;
 }
+
+const formularioReserva = document.getElementById("formularioReserva");
+
+formularioReserva.addEventListener("submit", function(e){
+
+    e.preventDefault(); //evita que se recargue la página
+
+    const cantidad = parseInt(numPersonas.value);
+
+    // Obtener edades
+    const edadesInputs = document.querySelectorAll(".edadInput");
+    const edades = [];
+
+    edadesInputs.forEach(input => {
+        edades.push(parseInt(input.value));
+    });
+
+    const tipoEvento = document.getElementById("evento").value;
+
+    const fechaValor = document.getElementById("fechaReserva").value;
+    const fechaReserva = new Date(fechaValor);
+
+    const resultado = Mesa(cantidad, edades, tipoEvento, fechaReserva);
+
+    if(resultado){
+        alert("Reserva confirmada");
+    } else {
+        alert("Error en la reserva");
+    }
+});
+

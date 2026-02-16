@@ -184,7 +184,7 @@ legend {
 /* Grupo de campos */
 .form-group {
   display: flex;
-  align-items: center;
+  align-items: left;
   gap: 15px;
   margin-bottom: 12px;
 }
