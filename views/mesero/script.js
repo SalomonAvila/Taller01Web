@@ -225,10 +225,9 @@ function Mesa(numPersonas, edades, tipoEvento, fechaReserva){
 }
 
 const formularioReserva = document.getElementById("formularioReserva");
+formularioReserva.addEventListener("submit", function(formReserva){
 
-formularioReserva.addEventListener("submit", function(e){
-
-    e.preventDefault(); //evita que se recargue la página
+    formReserva.preventDefault(); //evita que se recargue la página
 
     const cantidad = parseInt(numPersonas.value);
 
