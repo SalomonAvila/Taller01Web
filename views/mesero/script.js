@@ -194,6 +194,8 @@ numPersonas.addEventListener("input", function(){
     }
 });
 
+numPersonas.dispatchEvent(new Event("input"));
+
 function Mesa(numPersonas, edades, tipoEvento, fechaReserva){
     if(numPersonas <= 0){
         console.log("No se puede crear la reserva ya que el numero de personas no esta permitido (mín 1)");
