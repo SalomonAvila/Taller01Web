@@ -131,8 +131,8 @@ tbody tr:nth-child(even) {
   background-color: #f9f3f0;
 }
 
-/* Última fila de la tabla */
-tbody tr:last-child {
+/* Fila de aviso en la tabla */
+tbody tr.fila-aviso {
   background-color: #f2b705;
   font-weight: bold;
   color: #4a1414;

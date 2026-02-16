@@ -36,51 +36,13 @@
                     <th>Precio</th>
                 </tr>
             </thead>
-            <tbody>
-                <!-- Cada fila representa un plato -->
-                <tr>
-                    <td><img src="../../images/tostones.jpeg" alt="Toston con hogao" class="menu-img"></td>
-                    <td>Toston con hogao</td>
-                    <td>Entrada</td>
-                    <td>Tostadas de platano maduro cubiertas con tomate y cebolla, acompañadas con guacamole.</td>
-                    <td>$15,000</td>
-                </tr>
-                <tr>
-                    <td><img src="../../images/arepa.jpeg" alt="Arepa de chocolo" class="menu-img"></td>
-                    <td>Arepa de chocolo</td>
-                    <td>Entrada</td>
-                    <td>Arepas de chocolo cubiertas con queso siete cueros.</td>
-                    <td>$10,000</td>
-                </tr>
-                <tr>
-                    <td><img src="../../images/bandeja.jpeg" alt="Bandeja paisa" class="menu-img"></td>
-                    <td>Bandeja paisa</td>
-                    <td>Plato fuerte</td>
-                    <td>Bandeja con frijoles, arroz, morcilla, huevo frito, carne molida, platano, arepa y aguacate.</td>
-                    <td>$40,000</td>
-                </tr>
-                <tr>
-                    <td><img src="../../images/frijolada.jpeg" alt="Frijolada" class="menu-img"></td>
-                    <td>Frijolada</td>
-                    <td>Plato fuerte</td>
-                    <td>Plato de frijoles acompañado de chicharron, arroz blanco y arepa.</td>
-                    <td>$25,000</td>
-                </tr>
-                <tr>
-                    <td><img src="../../images/bocadillo.jpeg" alt="Queso con bocadillo" class="menu-img"></td>
-                    <td>Queso con bocadillo</td>
-                    <td>Postre</td>
-                    <td>Sandwich de bocadillo derretido con queso.</td>
-                    <td>$4,000</td>
-                </tr>
-                <tr>
-                    <td colspan="5">Cuando esté listo contacte con un mesero</td>
-                </tr>
+            <tbody id="tbodyPlatos">
+                <!-- Render dinámico desde script.js -->
             </tbody>
         </table>
     </div>
     <div class="seccion-busqueda">
-        <h2>🔍 Buscar Platos</h2>
+        <h2>Buscar Platos</h2>
         
         <label>Nombre del plato:</label>
         <input type="text" id="inputNombre" placeholder="Ej: Arepa, Toston...">
@@ -95,6 +57,8 @@
         
     <button id="btnBuscar">Buscar</button>
     </div>
+
+    <script src="script.js"></script>
 
 
 </body>
