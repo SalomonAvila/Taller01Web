@@ -344,13 +344,10 @@ legend {
     gap: 10px; /* espacio entre platos */
 }
 
-#formularioReserva {
+#contenedorEdades {
   text-align: left;
   align-items: flex-start;
 }
 
-#formularioReserva .btn-enviar {
-  align-self: flex-start;
-}
 
 
