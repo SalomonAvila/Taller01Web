@@ -1,5 +1,6 @@
 // Característica: Realizar pedido
 
+// Lista de platos disponibles en el menú del restaurante
 const platos = [
     { idPlato: 1, nombre: "Toston con Hogao", precio: 15000 },
     { idPlato: 2, nombre: "Arepa de chocolo", precio: 10000 },
@@ -8,14 +9,21 @@ const platos = [
     { idPlato: 5, nombre: "Queso con bocadillo", precio: 4000 }
 ];
 
+// Array que almacena los platos seleccionados por el mesero para el pedido actual
 let pedido = [];
 
+// Elementos del DOM para la funcionalidad de pedido
 const contenedorPlatos = document.getElementById("contenedorPlatos");
 const iniciarPedido = document.getElementById("iniciarPedido");
 const totalPedido = document.getElementById("totalPedido");
 const formularioPedido = document.getElementById("formularioPedido");
 const numPersonas = document.getElementById("numPersonas");
 
+/**
+ * Crea dinámicamente un formulario para agregar un plato al pedido
+ * Genera un select con los platos disponibles, un input para la cantidad
+ * y un botón para confirmar la selección.
+ */
 function CrearFormularioPlato(){
     
     const contenedorPedido = document.createElement("div");
@@ -55,10 +63,12 @@ function CrearFormularioPlato(){
 
             const idLocal = parseInt(seleccion.value);
             if(!idLocal){
+                alert("Necesita seleccionar un plato")
                 return;
             }
             const cantidad = parseInt(cantidadPlato.value);
             if(cantidad <= 0 || isNaN(cantidad) || cantidad == ""){
+                alert("Se necesita una cantidad valida")
                 return;
             }
 
@@ -79,6 +89,10 @@ function CrearFormularioPlato(){
         });
 }
 
+/**
+ * Muestra un mensaje de confirmación con el nombre del plato y cantidad seleccionada
+ * Este elemento se agrega al contenedor para que el usuario vea su selección.
+ */
 function MostrarConfirmacionPlato(nombre, cantidad){
 
     const contenedor = document.createElement("div");
@@ -87,6 +101,10 @@ function MostrarConfirmacionPlato(nombre, cantidad){
     contenedorPlatos.appendChild(contenedor);
 }
 
+/**
+ * Despliega el botón "Agregar Plato" que permite al mesero añadir
+ * más platos al pedido actual después de haber confirmado uno.
+ */
 function DesplegarBotonAgregar(){
 
     const contenedorAgregarPlato = document.getElementById("contenedorAgregarPlato");
@@ -105,6 +123,10 @@ function DesplegarBotonAgregar(){
     });
 }
 
+/**
+ * Despliega los botones finales: "Enviar Pedido" y "Reiniciar Pedido"
+ * Solo se muestran una vez, después de que se haya agregado el primer plato.
+ */
 function DesplegarBotonesFinales(){
     
     const contenedor = document.getElementById("contenedorBotonEnviar");
@@ -136,12 +158,20 @@ function DesplegarBotonesFinales(){
 
 }
 
+/**
+ * Limpia los contenedores de botones "Agregar Plato" y "Enviar/Reiniciar"
+ * para resetear la interfaz del pedido.
+ */
 function LimpiarControlesPedido(){
     document.getElementById("contenedorAgregarPlato").innerHTML = "";
     document.getElementById("contenedorBotonEnviar").innerHTML = "";
 }
 
-
+/**
+ * Event listener para el botón "Iniciar Pedido" y limpia
+ * cualquier pedido anterior y crea un nuevo formulario para
+ * agregar platos
+*/
 iniciarPedido.addEventListener("click", function(){
 
         pedido = [];
@@ -152,6 +182,10 @@ iniciarPedido.addEventListener("click", function(){
         iniciarPedido.style.display = "none";
 });
 
+/**
+ * Event listener para enviar el pedido completo
+ * Calcula el total, muestra el resumen y recarga la página después de 2 segundos
+ */
 formularioPedido.addEventListener("submit", function(formPedido){
     
     formPedido.preventDefault();
@@ -168,12 +202,22 @@ formularioPedido.addEventListener("submit", function(formPedido){
 
     totalPedido.textContent = `Total del pedido: ${total} COP`;
     LimpiarControlesPedido();
+    
+    // Recargar página después de 2 segundos para permitir ver el resumen
+    setTimeout(function(){
+        location.reload();
+    }, 2000);
 });
 
-// Característica: Reservar mesa
+
+// Contenedor donde se generarán dinámicamente los inputs de edades
 const contenedorEdades = document.getElementById("contenedorEdades");
 
-//Genera inputs dinamicamente cuqndo cambia el numero
+/**
+ * Event listener que genera dinámicamente inputs de edad según el número de personas.
+ * Cuando el usuario cambia la cantidad de personas, se crean o eliminan campos de edad
+ * para mantener la cantidad correcta de inputs.
+ */
 numPersonas.addEventListener("input", function(){
 
     contenedorEdades.innerHTML = ""; //Limpia los anteriores
@@ -194,36 +238,46 @@ numPersonas.addEventListener("input", function(){
     }
 });
 
+// Dispara el evento input al cargar la página para generar el input inicial de edad
 numPersonas.dispatchEvent(new Event("input"));
 
+/**
+ * Función que valida los datos de la reserva de mesa.
+ * Verifica que el número de personas sea válido, las edades estén entre 1-100,
+ * se haya seleccionado un tipo de evento y la fecha sea válida (igual o posterior a hoy).
+ */
 function Mesa(numPersonas, edades, tipoEvento, fechaReserva){
     if(numPersonas <= 0){
-        console.log("No se puede crear la reserva ya que el numero de personas no esta permitido (mín 1)");
+        alert("No se puede crear la reserva ya que el numero de personas no esta permitido (mín 1)");
         return;
     }
     
     for(let i = 0; i < edades.length; i++){
-        if (edades[i] < 1 || edades[i] > 100) {
-            console.log("Hay edades no válidas en la reserva");   
+        if (isNaN(edades[i]) || edades[i] < 1 || edades[i] > 100) {
+            alert("Hay edades no válidas en la reserva. Todas las edades deben estar entre 1 y 100 años");   
             return false;
         }
     }
 
     if(tipoEvento == null || tipoEvento == ""){
-        console.log("Debe seleccionar un evento valido");
+        alert("Debe seleccionar un evento valido");
         return false;
     }
 
     let fechaActual = new Date();
     //Validar Fecha
     if(fechaReserva < fechaActual){
-        console.log("La fecha seleccionada para la reserva no es valida, debe ser una fecha mayor o igual al día de hoy "+ fechaActual);
+        alert("La fecha seleccionada para la reserva no es valida, debe ser una fecha mayor o igual al día de hoy "+ fechaActual);
         return false;
     }
-
-    console.log("Reserva realizada con exito");
     return true;
 }
+
+/**
+ * Event listener para el formulario de reserva
+ * Obtiene los datos, valida y confirma la reserva,
+ * luego resetea el formulario
+ */
 
 const formularioReserva = document.getElementById("formularioReserva");
 formularioReserva.addEventListener("submit", function(formReserva){
@@ -248,10 +302,8 @@ formularioReserva.addEventListener("submit", function(formReserva){
 
     if(resultado){
         alert("Reserva confirmada");
-    } else {
-        alert("Error en la reserva");
+        formularioReserva.reset();
+        contenedorEdades.innerHTML = "";
+        numPersonas.dispatchEvent(new Event("input"));
     }
 });
-
-
-

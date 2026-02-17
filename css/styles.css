@@ -1,114 +1,168 @@
-/* Reset general y configuración base */
+/*
+  Esto basicamente crea unas variables con los colores principales de la pagina
+  de forma que sean reutilizables y no toque estar poniendo el color a mano a cada rato.
+  Para llamar la "variable" usen var() y entre los parentesis el nombre de la variable.
+*/
+:root {
+  --color-primary: #4a1414;
+  --color-dark: #2d5934;
+  --color-secondary: #8b0000;
+  --color-accent: #f2b705;
+  --color-light: #f9f3f0;
+  --color-text: #333;
+  --border-radius: 8px;
+  --transition-speed: 0.3s;
+  --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  --text-gradient: linear-gradient(45deg, #8b0000, #f2b705);
+}
+
+
+/*
+  Estilos generales que se aplican a toda la pagina, son lo basico que todos deberían tener
+*/
+
 * {
-  box-sizing: border-box; /* Incluye padding y borde en el tamaño total */
+  box-sizing: border-box;
   margin: 0;
   padding: 0; 
   font-family: system-ui, -apple-system, BlinkMacSystemFont,
                'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
-               'Open Sans', 'Helvetica Neue', sans-serif; /* Fuente general */
+               'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 /* Estilos generales del body */
 body {
-  font-family: Arial, sans-serif; /* Fuente principal */
-  background-color: burlywood; /* Color de fondo */
-  color: #333; /* Color del texto */
-  line-height: 1.6; /* Altura de línea */
-  text-align: center; /* Alineación del texto */
+  font-family: Arial, sans-serif;
+  background-color: burlywood; 
+  color: var(--color-text); 
+  line-height: 1.6;
+  text-align: center;
 }
 
-/* Márgenes para títulos */
 h1, h2, h3 {
   margin-bottom: 10px;
 }
 
-/* Título principal de bienvenida */
 .bienvenida{
   margin: 10px;
-  color: #4a1414;
+  color: var(--color-primary);
   font-size: 3rem;
   font-weight: bold;
   letter-spacing: 2px;
   text-transform: uppercase;
-  background: linear-gradient(45deg, #8b0000, #f2b705); /* Degradado */
+  background: var(--text-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-/* Párrafos */
 p {
   margin-bottom: 10px;
 }
 
-/* Estilos base para contenedores */
 div {
   margin: 10px 0;
   border-radius: 8px;
 }
 
-/* Estilos generales para enlaces */
-a {
-  display: inline-block;
-  padding: 10px 14px;
-  border-radius: 8px;
-  background-color: rgb(66, 11, 11);
+
+a,
+button,
+.btn-volver,
+.btn-enviar,
+.seccion-busqueda button {
+  background-color: var(--color-secondary);
   color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 10px 14px;
+  font-weight: bold;
   text-decoration: none;
   margin: 10px;
+  cursor: pointer;
+  transition: var(--transition-speed);
 }
 
-/* Barra de navegación */
+a:hover,
+button:hover,
+.btn-volver:hover,
+.btn-enviar:hover,
+.seccion-busqueda button:hover {
+  transform: translateY(-1px);
+  background-color: #a30000;
+}
+
+.btn-volver {
+  padding: 10px 16px;
+  border-radius: 10px;
+}
+
+.btn-volver:hover {
+  background-color: var(--color-dark);
+  color: var(--color-accent);
+}
+
+
+.btn-enviar {
+  padding: 12px 30px;
+  font-size: 1rem;
+  align-self: center;
+  min-width: 200px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-enviar:hover {
+  opacity: 0.9;
+}
+
+
+.seccion-busqueda button {
+  margin-top: 16px;
+  padding: 12px 20px;
+  font-size: 1rem;
+  display: block;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.seccion-busqueda button:hover {
+  box-shadow: 0 6px 14px rgba(74, 20, 20, 0.18);
+  
+}
+
 nav {
   display: flex;
-  background-color: #4a1414;
+  background-color: var(--color-primary);
   padding: 15px;
   text-align: right;
 }
 
-/* Ítems del menú de navegación */
-.navItem{
+.navItem {
+  align-content: center;
   color: white;
   font-weight: bold;
   margin-left: 20px;
-  padding: 8px 15px;
   border-radius: 5px;
-  transition: 0.5s;
+  transition: var(--transition-speed);
+  background-color: transparent;
+  cursor: pointer;
 }
 
-/* Efecto hover en navegación */
 .navItem:hover {
-  background-color: #2d5934;
-  color: #f2b705;
+  background-color: var(--color-dark);
+  color: var(--color-accent);
 }
 
-/* Botón volver */
-.btn-volver {
-  background-color: #8b0000;
-  color: white;
-  padding: 10px 16px;
-  border-radius: 10px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: 0.5s;
-}
-
-/* Hover del botón volver */
-.btn-volver:hover {
-  background-color: #2d5934;
-  color: #f2b705;
-}
-
-/* Estilos generales de tablas */
 table {
   width: 90%;
   border-collapse: collapse;
   margin: 20px auto;
-  border-radius: 8px;
+  border-radius: var(--border-radius);
   overflow: hidden;
 }
 
-/* Celdas de tablas */
 th, td {
   border: 1px solid #ddd;
   padding: 15px;
@@ -116,9 +170,8 @@ th, td {
   vertical-align: middle;
 }
 
-/* Encabezados de tabla */
 th {
-  background-color: #4a1414;
+  background-color: var(--color-primary);
   color: white;
   font-weight: bold;
   text-transform: uppercase;
@@ -126,44 +179,55 @@ th {
   font-size: 0.95rem;
 }
 
-/* Filas pares */
+/* 
+
+Como aca estamos trabajando con tablas, noten que el tr equivale a una table row,
+por lo tanto cada elemento tr par va a tener un background color de la variable que se
+establecio al inicio de los estilos
+
+*/
+
 tbody tr:nth-child(even) {
-  background-color: #f9f3f0;
+  background-color: var(--color-light);
 }
 
-/* Fila de aviso */
+
 .fila-aviso {
-  background-color: #f2b705;
+  background-color: var(--color-accent);
   font-weight: bold;
-  color: #4a1414;
+  color: var(--color-primary);
   padding: 14px 18px;
-  border-radius: 8px;
+  border-radius: var(--border-radius);
 }
 
-/* Secciones principales */
 .seccion-menu,
 .seccion-formulario {
   max-width: 1000px;
   margin: 30px auto;
   padding: 25px;
   border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow);
 }
 
-/* Seccion de busqueda */
+.seccion-menu h2,
+.seccion-formulario h2 {
+  color: var(--color-primary);
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  padding-bottom: 10px;
+}
+
 .seccion-busqueda {
   max-width: 1000px;
   margin: 20px auto 40px;
   padding: 22px 26px;
   border-radius: 14px;
-  background: linear-gradient(135deg, #fff7f0, #f3e3d2);
-  border: 1px solid rgba(74, 20, 20, 0.12);
-  box-shadow: 0 10px 20px rgba(74, 20, 20, 0.08);
+  box-shadow: var(--shadow);
   text-align: left;
 }
 
 .seccion-busqueda h2 {
-  color: #4a1414;
+  color: var(--color-primary);
   margin-bottom: 16px;
   font-size: 1.5rem;
 }
@@ -171,7 +235,7 @@ tbody tr:nth-child(even) {
 .seccion-busqueda label {
   display: block;
   font-weight: bold;
-  color: #4a1414;
+  color: var(--color-primary);
   margin: 10px 0 6px;
 }
 
@@ -181,7 +245,6 @@ tbody tr:nth-child(even) {
   padding: 12px 14px;
   border-radius: 10px;
   border: 1px solid rgba(74, 20, 20, 0.2);
-  background-color: #fff;
   font-size: 0.98rem;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
@@ -189,43 +252,10 @@ tbody tr:nth-child(even) {
 .seccion-busqueda input:focus,
 .seccion-busqueda select:focus {
   outline: none;
-  border-color: #8b0000;
+  border-color: var(--color-secondary);
   box-shadow: 0 0 0 3px rgba(139, 0, 0, 0.15);
 }
 
-.seccion-busqueda button {
-  margin-top: 16px;
-  background-color: #8b0000;
-  color: #fff;
-  border: none;
-  border-radius: 12px;
-  padding: 12px 20px;
-  font-weight: bold;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: transform 0.15s ease, box-shadow 0.2s ease, background-color 0.2s ease;
-  display: block;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.seccion-busqueda button:hover {
-  background-color: #a30000;
-  box-shadow: 0 6px 14px rgba(74, 20, 20, 0.18);
-  transform: translateY(-1px);
-}
-
-/* Títulos de secciones */
-.seccion-menu h2,
-.seccion-formulario h2 {
-  color: #4a1414;
-  margin-bottom: 20px;
-  font-size: 1.8rem;
-  padding-bottom: 10px;
-}
-
-/* Formularios */
 form {
   display: flex;
   flex-direction: column;
@@ -233,23 +263,20 @@ form {
   margin-top: 15px;
 }
 
-/* Agrupación de campos */
 fieldset {
   border: 2px solid #ddd;
-  border-radius: 8px;
+  border-radius: var(--border-radius);
   padding: 20px;
   margin-bottom: 15px;
 }
 
-/* Título del fieldset */
 legend {
   padding: 0 10px;
   font-weight: bold;
-  color: #4a1414;
+  color: var(--color-primary);
   font-size: 1.1rem;
 }
 
-/* Carta del menu */
 #contenedorPlatos {
   display: flex;
   flex-direction: column;
@@ -257,27 +284,18 @@ legend {
 }
 
 .menu-carta {
-  background: linear-gradient(135deg, #f8efe8, #f3e3d2);
   padding: 18px;
   border-radius: 10px;
 }
 
 .menu-item {
   display: grid;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   grid-template-columns: 110px 1fr;
   gap: 16px;
-  background: #fff7f0;
   border: 1px solid rgba(74, 20, 20, 0.15);
   border-radius: 14px;
   padding: 14px;
-  box-shadow: 0 6px 14px rgba(74, 20, 20, 0.08);
-  text-align: left;
-}
-
-.menu-info {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
 }
 
 .menu-encabezado {
@@ -289,30 +307,36 @@ legend {
   padding-bottom: 6px;
 }
 
+.menu-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
 .menu-nombre {
   font-size: 1.1rem;
-  color: #4a1414;
+  color: var(--color-primary);
   margin: 0;
 }
 
 .menu-precio {
   font-weight: bold;
-  color: #8b0000;
+  color: var(--color-secondary);
   white-space: nowrap;
 }
 
 .menu-categoria {
   font-size: 0.95rem;
   font-weight: bold;
-  color: #2d5934;
+  color: var(--color-dark);
   margin: 0;
 }
 
 .menu-descripcion {
   margin: 0;
-  color: #4a1414;
+  color: var(--color-primary);
 }
-/* Grupo de campos */
+
 .form-group {
   display: flex;
   align-items: center;
@@ -320,15 +344,21 @@ legend {
   margin-bottom: 12px;
 }
 
-/* Etiquetas */
 .form-group label {
   font-weight: bold;
-  color: #333;
+  color: var(--color-text);
   min-width: 200px;
   flex-shrink: 0;
 }
 
-/* Checkboxes */
+/*
+
+En las siguientes lineas le damos un estilo diferenciado a cada uno de los inputs
+que estén contenidos dentro del form-group, esto nos ayuda a poder aplicar diferetenes estilos
+sin estar atados a las etiquetas.
+
+*/
+
 .form-group input[type="checkbox"] {
   width: 20px;
   height: 20px;
@@ -336,13 +366,11 @@ legend {
   flex-shrink: 0;
 }
 
-/* Texto al lado del checkbox */
 .form-group input[type="checkbox"] + label {
   flex: 1;
   min-width: auto;
 }
 
-/* Inputs y selects */
 .form-group input[type="text"],
 .form-group input[type="number"],
 .form-group input[type="datetime-local"],
@@ -354,69 +382,55 @@ legend {
   flex: 1;
 }
 
-/* Etiqueta de cantidad */
+/*
+
+A diferencia de anteriores selectores, este unicamente va a agarrar el elemento contando
+de atras para adelante, luego esto equivaldria al penultimo label de este form-group.
+
+*/
+
 .form-group label:nth-last-child(2) {
   margin-left: auto;
   flex-shrink: 0;
   min-width: auto;
 }
 
-/* Total del pedido */
 .total-pedido {
-  background-color: #f2b705;
-  color: #4a1414;
+  background-color: var(--color-accent);
+  color: var(--color-primary);
   padding: 15px;
-  border-radius: 8px;
+  border-radius: var(--border-radius);
   margin: 15px 0;
   font-size: 1.2rem;
 }
 
-/* Título del total */
 .total-pedido h3 {
   margin: 0;
 }
 
-/* Botón enviar */
-.btn-enviar {
-  background-color: #8b0000;
-  color: white;
-  padding: 12px 30px;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  align-self: center;
-  min-width: 200px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-/* Hover botón enviar */
-.btn-enviar:hover {
-  background-color: #a30000;
-  opacity: 0.9;
-}
-
-/* Imágenes del menú */
 .menu-img {
   width: 110px;
-  height: 90px;
+  height: 110px;
   object-fit: cover;
   border-radius: 12px;
   display: block;
   border: 2px solid rgba(74, 20, 20, 0.2);
 }
 
-/* Imagen principal */
 .img-principal {
   width: 40%;
   height: auto;
   border-radius: 12px;
 }
 
-/* Esto cambia las reglas según el tamaño del dispositivo */
+/*
+
+Estas lineas de codigo nos ayudan a poder hacer nuestra pagina "responsive".
+Este concepto se basa en añadir estos breakpoints dependiendo de los distintos tamaños
+de las pantallas de los posibles usuarios, cambiando así ciertas reglas para facilitar
+la visualizacion y mitigar problemas a nivel de diseño
+
+*/
 @media (max-width: 768px) {
   body {
     padding: 12px;
@@ -440,15 +454,6 @@ legend {
     grid-template-columns: 90px 1fr;
   }
 
-  /* Pantallas grandes */
-  @media (min-width: 1200px) {
-    body {
-      max-width: 1100px;
-      margin: auto;
-    }
-  }
-
-  /* Botón volver fijo */
   .btn-volver {
     position: fixed;
     top: 20px;
@@ -462,12 +467,12 @@ legend {
   }
 
   .btn-volver:hover {
-    background-color: #2d5934;
-    color: #f2b705;
+    background-color: var(--color-dark);
+    color: var(--color-accent);
     transform: translateX(-3px);
   }
 
-  /* Contenedor de imagen principal */
+  
   .contenedor-img {
     text-align: center;
     background-color: burlywood;
@@ -483,7 +488,7 @@ legend {
 }
 
 #contenedorEdades input {
-  width: 80px;       /* tamaño pequeño */
+  width: 80px;
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 6px;
@@ -491,10 +496,6 @@ legend {
 
 .contenedorEdades label {
   font-weight: bold;
-  color: #333;
+  color: var(--color-text);
   min-width: 200px;
 }
-
-
-
-
